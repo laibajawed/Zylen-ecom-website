@@ -99,7 +99,9 @@ export const productType = {
             media: 'images',
             subtitle: 'price',
         },
-    prepare(selection ) {
+        
+          
+    prepare(selection:{ title: string; media: any[]; subtitle: number }) {
         const { title, media, subtitle } = selection;
         const image =media && media[0]
         return {
