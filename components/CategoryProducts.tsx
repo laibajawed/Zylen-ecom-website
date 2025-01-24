@@ -24,7 +24,7 @@ const CategoryProducts = ({ categories, slug }: Props) => {
       const query = `*[_type == "product" && references(*[_type == "category" && slug.current == $categorySlug]._id)] | order(name asc)`;
       const data = await client.fetch(query, { categorySlug });
       setProducts(data);
-    } catch (error) {
+    } catch  {
       console.error("Error fetching products");
     } finally {
       setLoading(false);
