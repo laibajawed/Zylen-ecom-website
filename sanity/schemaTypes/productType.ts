@@ -101,7 +101,7 @@ export const productType = {
         },
         
           
-    prepare(selection) {
+    prepare(selection: Record<string, any>) {
         const { title, media, subtitle } = selection;
         const image =media && media[0]
         return {
