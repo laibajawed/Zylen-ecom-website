@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
   className?: string;
 }
-const Logo = ({ children, className }: Props) => {
+const Logo = ({ children }: Props) => {
   return (
     <Link href={"/"}>
       <h2 className={cn("text-2xl font-black tracking-wider uppercase ")}>

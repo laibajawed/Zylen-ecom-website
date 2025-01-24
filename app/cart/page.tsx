@@ -20,19 +20,12 @@ import QuantityButtons from "@/components/QuantityButtons";
 import { Button } from "@/components/ui/button";
 import paypalLogo from "../../images/PayPal_horizontally_Logo_2014.png";
 import { Separator } from "@/components/ui/separator";
-import { useUser } from "sanity";
 
-type UseUserReturn = {
-  id: string;
-  email: string;
-  name: string;
-  stripeCustomerId: string | null;
-};
 
 
 const CartPage = () => {
   const [isClient, setIsClient] = useState(false);
-  const [loading,setLoading]=useState(false)
+  const [loading]=useState(false)
 
   const {
     deleteCartProduct,
@@ -209,6 +202,7 @@ const CartPage = () => {
                   />
                 </div>
                 <Button 
+                disabled={loading}
                 onClick={handleCheckout}
                   className="w-full rounded-full font-semibold tracking-wide"
                   size="lg"
