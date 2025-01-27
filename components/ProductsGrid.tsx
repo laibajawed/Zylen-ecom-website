@@ -28,7 +28,7 @@ export const ProductsGrid = () => {
       }
     };
     fetchData();
-  }, [selectedTab,  query , params]);
+  }, [selectedTab,]);
 
   return (
     <div className="mt-10 flex flex-col items-center">

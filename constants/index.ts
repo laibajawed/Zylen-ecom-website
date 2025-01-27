@@ -55,7 +55,7 @@ export const categoriesData = [
     href: "/kids",
   },
   {
-    title: "Shirt",
+    title: "T-Shirt",
     href: "/t-shirt",
   },
   {

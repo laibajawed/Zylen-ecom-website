@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
 import { Toaster } from "react-hot-toast";
-import { ClerkProvider } from "@clerk/nextjs";
+
 
 
 const raleway = localFont({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-  <ClerkProvider>
+ 
       <html lang="en">
       <body
         className={`${raleway.variable}antialiased`}
@@ -41,6 +41,6 @@ export default function RootLayout({
         }}/>
       </body>
     </html>
-    </ClerkProvider>
+
   );
 }
