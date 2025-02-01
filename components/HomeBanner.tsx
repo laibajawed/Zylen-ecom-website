@@ -7,9 +7,8 @@ const HomeBanner = () => {
       <Title className="text-3xl md:text-4xl uppercase font-bold text-center">
         Best Clothing Collection
       </Title>
-      <p className="text-sm text-center text-lightColor/80 font-medium max w-[480px]">
-        Find everything you need to look and feel the best, and shop the latest
-        fashion and lifestyle products
+      <p className="text-sm text-center text-lightColor/80 font-medium sm:w-[425px] md:w-[460px]">
+      Find everything you need to look and feel your best, and shop the latest fashion and lifestyle products.
       </p>
     </div>
   );

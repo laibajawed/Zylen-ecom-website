@@ -11,33 +11,33 @@ import React, { FC } from "react";
 
 interface Props {
   className?: string;
-  iconClassName: string;
-  tooltipClassName: string;
+  iconClassName?: string;
+  tooltipClassName?: string;
 }
 
 const socialLink = [
   {
     title: "Github",
-    href: "https://github.com",
+    href: "https://github.com/laibajawed",
     icon: <Github className="w-5 h-5" />,
   },
   {
     title: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/laiba-jawed/",
     icon: <Linkedin className="w-5 h-5" />,
   },
   {
     title: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/urf4vlaiba/",
     icon: <Instagram className="w-5 h-5" />,
   },
 ];
 
-const SocialMedia: FC<Props> = ({
+const SocialMedia = ({
   className,
   iconClassName,
   tooltipClassName,
-}) => {
+}: Props) => {
   return (
     <TooltipProvider>
       <div className={cn("flex items-center gap-3.5", className)}>

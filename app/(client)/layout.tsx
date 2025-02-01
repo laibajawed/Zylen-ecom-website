@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 
-import "./globals.css";
-import Header from "../components/Header";
+import "../globals.css";
+import Header from "../../components/Header";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
 import { Toaster } from "react-hot-toast";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 
 const raleway = localFont({
-  src:"./fonts/Raleway.woff2",
+  src:"../fonts/Raleway.woff2",
   variable:'--font-raleway',
-  weight:"100 900" 
+  weight:"100 900", 
 })
 
 export const metadata: Metadata = {
@@ -26,7 +27,8 @@ export default function RootLayout({
 }>) {
   return (
  
-      <html lang="en">
+      <ClerkProvider>
+          <html lang="en">
       <body
         className={`${raleway.variable}antialiased`}
       >
@@ -42,5 +44,6 @@ export default function RootLayout({
       </body>
     </html>
 
+      </ClerkProvider>
   );
 }

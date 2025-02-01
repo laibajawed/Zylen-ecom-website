@@ -9,7 +9,7 @@ import AddToCardButton from "./AddToCardButton";
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div className="group text-sm rounded-lg overflow-hidden">
-      <div className="bg-gradient-to-r from-zinc-200 via-zinc-3 to-zinc-200 overflow-hidden relative">
+      <div className="bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-200 overflow-hidden relative">
         {product?.images && (
           <Link href={`/product/${product?.slug?.current}`}>
             <Image
@@ -30,8 +30,8 @@ const ProductCard = ({ product }: { product: Product }) => {
           </div>
         )}
       </div>
-      <div className="py-3 px-2 flex flex-col gap-1.5 bg-zinc-50 border border-t-0 rounded-md rounded-tl-none rounded-tr-none">
-        <h2 className="font-semibold lie-clamp-1">{product?.title}</h2>
+      <div className="py-3 px-2 flex flex-col gap-1.5 bg-zinc-50 border border-t-0 rounded-lg rounded-tl-none rounded-tr-none">
+        <h2 className="font-semibold line-clamp-1">{product?.title}</h2>
         <p>{product?.intro}</p>
         <PriceView
           className="text-lg"

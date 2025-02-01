@@ -19,8 +19,8 @@ export const ProductsGrid = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const data = await client.fetch(query, params);
-        setProducts(data);
+        const response = await client.fetch(query, params);
+        setProducts(response);
       } catch (error) {
         console.log("Products Fetching Error", error);
       } finally {
@@ -28,7 +28,7 @@ export const ProductsGrid = () => {
       }
     };
     fetchData();
-  }, [selectedTab,]);
+  }, [selectedTab]);
 
   return (
     <div className="mt-10 flex flex-col items-center">
@@ -43,7 +43,7 @@ export const ProductsGrid = () => {
       ) : (
         <>
           {products?.length ? (
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10 w-full">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10 w-full">
               {products.map((product: Product) => (
                 <AnimatePresence key={product?._id}>
                   <motion.div

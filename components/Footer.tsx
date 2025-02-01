@@ -17,9 +17,7 @@ const Footer = () => {
             <div className="space-y-4">
               <Logo>Zylen</Logo>
               <p className="text-gray-600 text-sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Architecto et suscipit recusandae odit asperiores soluta dolor
-                mollitia quaerat,
+              Zylen is a cutting-edge technology company dedicated to providing innovative solutions for modern businesses.
               </p>
               <SocialMedia
                 className="text-darkColor/60  "
@@ -66,11 +64,11 @@ const Footer = () => {
                   type="email"
                   placeholder="Enter your email"
                   required
-                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus-within:ring-2 focus:ring-gray-200"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
                 />
                 <button
                   type="submit"
-                  className="w-full bg-darkColor  rounded-lg hover:bg-gray-800 text-white mt-4 py-4 transition-colors"
+                  className="w-full bg-darkColor  rounded-lg hover:bg-gray-800 text-white mt-4 px-4 py-3 transition-colors"
                 >
                   Subscribe
                 </button>

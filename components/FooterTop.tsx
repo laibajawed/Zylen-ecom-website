@@ -11,28 +11,28 @@ const data: Props[] = [
     title: "Visit Us",
     subtitle: "Karachi, Pakistan",
     icon: (
-      <MapPin className="text-gray-600 group-hover:title-darkColor transition-colors duration" />
+      <MapPin className="text-gray-600 group-hover:text-darkColor transition-colors duration" />
     ),
   },
   {
     title: "Call Us",
     subtitle: "+92 300 000 0000",
     icon: (
-      <Phone className="text-gray-600 group-hover:title-darkColor transition-colors duration" />
+      <Phone className="text-gray-600 group-hover:text-darkColor transition-colors duration" />
     ),
   },
   {
     title: "Working Hours",
     subtitle: "Mon - Fri : 9:00 AM - 9:00 PM",
     icon: (
-      <MapPin className="text-gray-600 group-hover:title-darkColor transition-colors duration" />
+      <MapPin className="text-gray-600 group-hover:text-darkColor transition-colors duration" />
     ),
   },
   {
     title: "Email Us",
-    subtitle: "Laib.a.jaweddd@gmail.com",
+    subtitle: "laib.a.jaweddd@gmail.com",
     icon: (
-      <MapPin className="text-gray-600 group-hover:title-darkColor transition-colors duration" />
+      <MapPin className="text-gray-600 group-hover:text-darkColor transition-colors duration" />
     ),
   },
 ];

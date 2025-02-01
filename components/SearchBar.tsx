@@ -29,7 +29,7 @@ const SearchBar = () => {
     }
     setLoading(true);
     try {
-      const query = `*[_type == "product" && title match "shirt"] | order(title asc)
+      const query = `*[_type == "product" && title match $search] | order(title asc)
 `;
       const params = { search: `${search}*` };
       const response = await client.fetch(query, params);
@@ -83,7 +83,7 @@ const SearchBar = () => {
             {loading ? (
               <p className="flex items-center px-6 py-10 gap-1 text-center text-yellow-500 font-semibold ">
                 <Loader2 className="w-5 h-5 animate-spin" />
-                Loading.
+                Loading....
               </p>
             ) : products.length ? (
               products?.map((product: Product) => (

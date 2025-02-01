@@ -18,14 +18,17 @@ import toast from "react-hot-toast";
 import PriceFormatter from "@/components/PriceFormatter";
 import QuantityButtons from "@/components/QuantityButtons";
 import { Button } from "@/components/ui/button";
-import paypalLogo from "../../images/PayPal_horizontally_Logo_2014.png";
+import paypalLogo from "../../../images/PayPal_horizontally_Logo_2014.png";
 import { Separator } from "@/components/ui/separator";
+import { useAuth, useUser } from "@clerk/nextjs";
+import { createCheckoutSession, Metadata } from "@/actions/createCheckoutSession";
 
 
 
 const CartPage = () => {
   const [isClient, setIsClient] = useState(false);
-  const [loading]=useState(false)
+  const [loading, setLoading]=useState(false)
+  // const {isSignedIn} = useAuth()
 
   const {
     deleteCartProduct,
@@ -35,6 +38,7 @@ const CartPage = () => {
     resetCart,
     getGroupedItems,
   } = useCartStore();
+  const {user} = useUser()
 
 
   useEffect(() => {
@@ -65,14 +69,30 @@ const CartPage = () => {
     toast.success("Product removed successfully!");
   };
 
-  const handleCheckout = () => {
-    toast.success('checkout successfully!');
-  }
+  const handleCheckout = async() => {
+    setLoading(true);
+    try {
+      const metadata:Metadata ={
+        orderNumber:crypto.randomUUID(),
+        customerName:user?.firstName ?? 'unknown',
+        customerEmail:user?.emailAddresses[0]?.emailAddress ?? 'unknown',
+        clerkUserId :user!.id,
+      };
+      const checkOutUrl = await createCheckoutSession(cartProducts,metadata);
+      if(checkOutUrl){
+        window.location.href = checkOutUrl;
+      }
+    } catch (error) {
+      console.log("Checkout Error", error)
+    }finally{
+      setLoading(false)
+    }
+  };
 
   
 
   return (
-    <div className="bg-gray-50 pb-52 md:pd-10">
+    <div  className="bg-gray-50 pb-52 md:pd-10">
       <Container>
         <div className="flex items-center gap-2 py-5 text">
           <ShoppingBag />
