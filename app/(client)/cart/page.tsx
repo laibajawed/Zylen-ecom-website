@@ -20,7 +20,7 @@ import QuantityButtons from "@/components/QuantityButtons";
 import { Button } from "@/components/ui/button";
 import paypalLogo from "../../../images/PayPal_horizontally_Logo_2014.png";
 import { Separator } from "@/components/ui/separator";
-import { useAuth, useUser } from "@clerk/nextjs";
+import {  useUser } from "@clerk/nextjs";
 import { createCheckoutSession, Metadata } from "@/actions/createCheckoutSession";
 
 

@@ -7,7 +7,7 @@ import SearchBar from "./SearchBar";
 import CartIcon from "./CartIcon";
 import { getAllCategories } from "@/sanity/helpers/query";
 import { currentUser } from "@clerk/nextjs/server";
-import { ClerkLoaded, SignedIn, SignIn, SignInButton, UserButton } from "@clerk/nextjs";
+import { ClerkLoaded, SignedIn,  SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { ListOrdered } from "lucide-react";
 
