@@ -76,7 +76,7 @@ const CartPage = () => {
         orderNumber:crypto.randomUUID(),
         customerName:user?.firstName ?? 'unknown',
         customerEmail:user?.emailAddresses[0]?.emailAddress ?? 'unknown',
-        clerkUserId :user!.id,
+        clerkUserId :user?.id ?? 'unknown',
       };
       const checkOutUrl = await createCheckoutSession(cartProducts,metadata);
       if(checkOutUrl){

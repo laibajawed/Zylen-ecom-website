@@ -9,7 +9,7 @@ export interface Metadata {
   customerName: string;
   customerEmail: string;
   clerkUserId: string;
-}
+} 
 interface CartItems {
   products: CartItem["product"];
   quantity: number;
