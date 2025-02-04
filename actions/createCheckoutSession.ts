@@ -13,7 +13,9 @@ export interface Metadata {
 interface CartItems {
   products: CartItem["product"];
   quantity: number;
+
 }
+
 
 export async function createCheckoutSession(
   items: CartItem[],
